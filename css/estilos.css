@@ -38,6 +38,8 @@
     border: rgb(89, 89, 89) 10px solid;
     border-radius: 10px;
     background-color: rgb(255, 249, 151);
+    display: flex;
+    flex-direction: column;
 }
 #bienvenido{
     font-size: 26px;
@@ -283,5 +285,15 @@
     font-weight: bold;
     font-size: 50px;
     padding: 60px 30px 0px 30px;
+    text-align: center;
+}
+
+/* adiciones*/
+#error{
+    width: 300px;
+    margin: auto;
+    font-size: 22px;
+    border: 0;
+    background-color: rgb(255, 249, 151);
     text-align: center;
 }

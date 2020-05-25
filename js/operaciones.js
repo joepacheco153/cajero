@@ -11,7 +11,8 @@ document.getElementById("b9").addEventListener("click",b9);
 document.getElementById("b11").addEventListener("click",b11);
 document.getElementById("b12").addEventListener("click",b12);
 var resultado = document.getElementById("clave");
-var resultado2 = document.getElementById("claveretiro");
+var error = document.getElementById("error");
+
 //funciones botones
 function b1(){
     var n = document.getElementById("b1").innerHTML;
@@ -56,9 +57,13 @@ function b11(){
 function limpiar(){
     resultado.value = "";
 }
-function limpiar2(){
-    resultado2.value="";
+function mostrarerror(){
+    error.value = "Contraseña incorrecta"
 }
+function limpiarerror(){
+    error.value="";
+}
+
 //validar contraseña
 var password = "10101010";
 class Usuario{
@@ -74,9 +79,10 @@ function validar(){
     if(user.contraseña == password){
         vistamenu();
     }else{
-        alert("no");
+        mostrarerror();
         limpiar();
-    }
+        
+    } 
 }
 //redireccionamientos
 function vistaretiro(){
@@ -91,67 +97,4 @@ function vistagracias(){
 function vistaotrascantidades(){
     window.location = "otrascantidades.html";
 }
-function vistaretirosoles(){
-    window.location = "retirosoles.html";
-}
-function vistatransaccion(){
-    window.location = "transaccionprocesada.html";
-}
-//botones retiro
-function n1(){
-    var n = document.getElementById("b1").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n2(){
-    var n = document.getElementById("b2").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n3(){
-    var n = document.getElementById("b3").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n4(){
-    var n = document.getElementById("b4").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n5(){
-    var n = document.getElementById("b5").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n6(){
-    var n = document.getElementById("b6").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n7(){
-    var n = document.getElementById("b7").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n8(){
-    var n = document.getElementById("b8").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n9(){
-    var n = document.getElementById("b9").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n11(){
-    var n = document.getElementById("b11").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-function n12(){
-    var n = document.getElementById("b12").innerHTML;
-    resultado2.value = resultado2.value + n;
-}
-//validarretiro
-function multiplo(){
-    if(resultado2.value==""){
-        alert("Ingrese la cantidad a retirar");
-    }else{
-        if(resultado2.value%10==0){
-        vistatransaccion();
-    }else{
-        alert("Ingrese multiplo de 10");
-        limpiar2();
-         }
-        }    
-}
+
